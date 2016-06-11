@@ -1,0 +1,11 @@
+<ion-navbar *navbar>
+  <ion-title>Available Voice Handlers</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#h of handlers" (click)="browseHandler(h)">
+        {{h}}
+        </ion-item>
+    </ion-list>
+</ion-content>

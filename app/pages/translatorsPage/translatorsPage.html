@@ -1,0 +1,23 @@
+<ion-navbar *navbar>
+    <ion-title>Translators</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <div [hidden]="!opent2tBridgeService.devices.length">
+        <h2>Connected Translators</h2>
+        <ion-list>
+            <ion-item item-text-wrap *ngFor="#item of opent2tBridgeService.devices">
+                {{item.name}}
+            </ion-item>
+        </ion-list>
+    </div>
+    <h2>Set up Translators</h2>
+    <p>
+        Here are some types of things you can connect to via translators.
+    </p>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#item of translators" (click)="connect(item)">
+            {{item.split('.')[item.split('.').length - 1]}}
+        </ion-item>
+    </ion-list>
+</ion-content>

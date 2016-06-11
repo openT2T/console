@@ -1,0 +1,35 @@
+<ion-navbar *navbar>
+    <ion-title>
+        Settings
+    </ion-title>
+</ion-navbar>
+
+<ion-content padding>
+
+    <!--Browse Github-->
+    <ion-card>
+        <ion-card-header>
+            <h2>Browse Repository</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list no-lines>
+                <ion-item (click)="browseSchemas()">
+                    Translators
+                </ion-item>
+                <ion-item (click)="browseOnboardingMethods()">
+                    Onboarding
+                </ion-item>
+                <ion-item (click)="browseVoiceHandlers()">
+                    Voice
+                </ion-item>
+            </ion-list>
+            <ion-note>
+                http://github.com/openT2T
+            </ion-note>
+        </ion-card-content>
+    </ion-card>
+
+    <!--Miscellaneous-->
+    <button success full (click)="pluginTest()">Plugin Test</button>
+
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-navbar *navbar>
+  <ion-title>Available Things</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#t of things" (click)="browseThing(t)">
+        {{t}}
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-opent2t" version="0.0.1">
+
+  <name>opent2t</name>
+  <description>Cordova plugin for Open Translators to Things.</description>
+  <engines>
+    <engine name="cordova" version=">=5.0.0"/>
+  </engines>
+
+  <asset src="www/opent2t.js" target="js/opent2t.js"/>
+
+  <js-module src="www/opent2t.js" name="opent2t">
+    <clobbers target="opent2t" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="OpenT2T">
+        <param name="android-package" value="org.opent2t.plugin.OpenT2T"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/OpenT2T.java" target-dir="src/org/opent2t/plugin/"/>
+  </platform>
+
+  <platform name="windows">
+    <js-module src="src/windows/OpenT2TProxy.js" name="OpenT2TProxy">
+      <clobbers target="" />
+    </js-module>
+
+    <framework src="lib/windows/x86/BridgeRT.winmd"
+               target-dir="lib/x86" custom="true"
+               arch="x86" device-target="win" versions="10" />
+
+    <framework src="lib/windows/x64/BridgeRT.winmd"
+               target-dir="lib/x64" custom="true"
+               arch="x64" device-target="win" versions="10" />
+
+    <framework src="lib/windows/arm/BridgeRT.winmd"
+               target-dir="lib/arm" custom="true"
+               arch="arm" device-target="win" versions="10" />
+
+    <hook type="after_plugin_install" src="scripts/windows/afterInstall.js" />
+    <hook type="after_plugin_uninstall" src="scripts/windows/afterUninstall.js" />
+
+    <resource-file src="lib/windows/arm/jx.dll" target="jx.dll"
+      arch="arm" device-target="win" versions="10" />
+
+    <resource-file src="lib/windows/x86/jx.dll" target="jx.dll"
+      arch="x86" device-target="win" versions="10" />
+
+    <resource-file src="lib/windows/x64/jx.dll" target="jx.dll"
+      arch="x64" device-target="win" versions="10" />
+
+    <config-file target="package.windows10.appxmanifest" parent="/Package/Capabilities">
+        <Capability Name="allJoyn" />
+        <Capability Name="privateNetworkClientServer" />
+    </config-file>
+
+  </platform>
+
+</plugin>

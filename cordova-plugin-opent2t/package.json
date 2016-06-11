@@ -1,0 +1,33 @@
+{
+    "name": "cordova-plugin-opent2t",
+    "version": "1.0.1",
+    "description": "Cordova plugin for Open Translators to Things.",
+    "cordova": {
+        "id": "cordova-plugin-opent2t",
+        "platforms": [
+            "android",
+            "windows"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/openT2T/console/tree/master/cordova-plugin-opent2t"
+    },
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-windows"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=5.0.0"
+        }
+    ],
+    "author": "Open Translators to Things",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/openT2T/console/issues"
+    },
+    "homepage": "https://github.com/openT2T/console/blob/master/cordova-plugin-opent2t/README.md"
+}

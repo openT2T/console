@@ -1,0 +1,29 @@
+<ion-navbar *navbar>
+    <ion-title>Plugin Test</ion-title>
+</ion-navbar>
+<ion-content padding>
+    <form #deviceForm="ngForm" novalidate>
+        <ion-item>
+            <ion-label floating primary>Device name</ion-label>
+            <ion-input [(ngModel)]="devicename" ngControl="devname" type="text" #devname="ngForm" required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating primary>Device vendor</ion-label>
+            <ion-input [(ngModel)]="devicevendor" ngControl="devvendor" type="text" #devvendor="ngForm" required>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating primary>Device props</ion-label>
+            <ion-input [(ngModel)]="deviceprops" ngControl="props" type="text" #props="ngForm" required>
+            </ion-input>
+        </ion-item>
+        <p>
+            <button danger (click)="submit(deviceForm)" type="submit" primary block>Add device</button>
+        </p>
+    </form>
+
+    <p>
+        <button success (click)="echo()">Echo</button>
+    </p>
+</ion-content>

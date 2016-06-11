@@ -1,0 +1,19 @@
+<ion-navbar *navbar>
+  <ion-title>{{name}}</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#f of files" (click)="browseFile(f)">
+        {{f}}
+        </ion-item>
+    </ion-list>
+    
+    <br/>
+    <h3> Files returned using the search API: </h3>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#s of searchResults" (click)="browseSearchedFile(s)">
+        {{s}}
+        </ion-item>
+    </ion-list>
+</ion-content>

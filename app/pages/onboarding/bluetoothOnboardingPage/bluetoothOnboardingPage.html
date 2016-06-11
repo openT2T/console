@@ -1,0 +1,12 @@
+<ion-navbar *navbar>
+    <ion-title>Bluetooth Onboarding</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#item of items" (click)="connect(item)">
+            {{item.name}} |
+            {{item.id}}
+        </ion-item>
+    </ion-list>
+</ion-content>

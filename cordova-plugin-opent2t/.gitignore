@@ -1,0 +1,12 @@
+# build output
+build
+
+# packages
+node_modules/
+
+# temporary files
+.tmp/
+.temp/
+*.log
+.DS_Store
+

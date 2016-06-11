@@ -1,0 +1,33 @@
+<ion-navbar *navbar>
+    <ion-title>Manual Onboarding</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <form #manualOnboardingForm="ngForm" novalidate>
+            
+            <p padding-left>
+                Please onboard your device per the instructions here, then enter the token
+                you receive below: {{instructionsUrl}}
+            </p>
+
+            <ion-item>
+                <ion-label floating primary>Token</ion-label>
+                <ion-input [(ngModel)]="credentials.token" ngControl="token" type="text" #token="ngForm" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="token.valid || submitted == false" danger padding-left>
+                Token is required
+            </p>
+
+            <ion-row responsive-sm>
+                <ion-col>
+                    <button (click)="submit(manualOnboardingForm)" type="submit" primary block>
+                        <ion-icon ios="log-in" md="log-in"></ion-icon>
+                        Onboard Device
+                    </button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-list>
+</ion-content>

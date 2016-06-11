@@ -1,0 +1,14 @@
+<ion-navbar *navbar>
+    <ion-title>{{name}}</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <h2>Select Product</h2>
+
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#item of devices" (click)="addTranslator(item)">
+            {{item}}
+        </ion-item>
+    </ion-list>
+
+</ion-content>

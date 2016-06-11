@@ -1,0 +1,11 @@
+<ion-navbar *navbar>
+  <ion-title>{{name}}</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item item-text-wrap *ngFor="#f of files" (click)="browseFile(f)">
+        {{f}}
+        </ion-item>
+    </ion-list>
+</ion-content>
