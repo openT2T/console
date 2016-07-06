@@ -27,18 +27,6 @@ to locally, then run:
 git clone https://github.com/openT2T/console.git
 ```
 
-## WINK configuration:
-## Create winkConfig.ts file under "app\pages\onboarding\winkOnboardingPage" with the following contents.
-## Populate the client ID and Secret values. It is listed in .gitignore to help avoid accidental check-in of this file.
-
-    // Configuration for communicating with the WINK service.
-    export class WinkConfig {
-
-        public static API_ENDPOINT: string = "https://api.wink.com";
-        public static CLIENT_ID: string = "";
-        public static CLIENT_SECRET: string = "";
-    }
-
 ## Install Dependencies
 
 You will need to install various dependencies to populate your local repo. The development process
@@ -101,7 +89,18 @@ CordovaApp.Windows10 project as startup, and then just run from within Visual St
 
 This app requires some API secrets from external services. Configure them here, if you want to use these services:
 
-1. Wink API: app/pages/onboarding/winkOnboardingPage/winkConfig.ts
+### Wink Configuration
+Create winkConfig.ts file under "app\pages\onboarding\winkOnboardingPage" with the following contents.
+
+    // Configuration for communicating with the WINK service.
+    export class WinkConfig {
+
+        public static API_ENDPOINT: string = "https://api.wink.com";
+        public static CLIENT_ID: string = "";
+        public static CLIENT_SECRET: string = "";
+    }
+    
+Next, populate the the client ID and Secret values (you will need to get these from Wink / Quirky as documented on their site). This file is listed in .gitignore to help avoid accidental check-in of these secrets.
 
 ## Common Development Workflows
 
