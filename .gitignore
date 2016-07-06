@@ -8,3 +8,4 @@ www/build
 .tmp
 logs
 *.log
+winkConfig.ts
