@@ -4,7 +4,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#schema of schemas" (click)="browseTranslators(schema)">
+        <ion-item item-text-wrap *ngFor="let schema of schemas" (click)="browseTranslators(schema)">
             {{schema}}
         </ion-item>
     </ion-list>

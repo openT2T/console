@@ -1,4 +1,4 @@
-import {Injectable} from "angular2/core";
+import {Injectable} from "@angular/core";
 import {BleDeviceItem} from "../model/bleDeviceItem";
 
 // declare bluetoothle cordova plugin for typescript.

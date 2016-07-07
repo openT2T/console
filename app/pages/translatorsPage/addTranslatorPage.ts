@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {TranslatorsDataService} from "../../providers/translatorsDataService";
 import {SearchDataService} from "../../providers/searchDataService";
 import {BluetoothOnboardingPage} from "../onboarding/bluetoothOnboardingPage/bluetoothOnboardingPage";

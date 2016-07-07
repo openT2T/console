@@ -5,7 +5,7 @@ module.exports = {
   entry: [
     path.normalize('es6-shim/es6-shim.min'),
     'reflect-metadata',
-    path.normalize('zone.js/dist/zone-microtask'),
+    path.normalize('zone.js/dist/zone'),
     path.resolve('app/app')
   ],
   output: {
@@ -35,7 +35,7 @@ module.exports = {
     noParse: [
       /es6-shim/,
       /reflect-metadata/,
-      /zone\.js(\/|\\)dist(\/|\\)zone-microtask/
+      /zone\.js(\/|\\)dist(\/|\\)zone/
     ]
   },
   resolve: {

@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {OnboardingDataService} from "../../../providers/onboardingDataService";
 import {OnboardingFileContentPage} from "../onboardingFileContentPage/onboardingFileContentPage";
 import {doAlert} from "../../../model/utils";

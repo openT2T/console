@@ -1,5 +1,5 @@
-import {Page, IonicApp, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {Page, App, NavParams} from "ionic-angular";
+import {OnInit} from "@angular/core";
 import {OnboardingPageBase} from "../onboardingPageBase";
 
 import {SearchDataService} from "../../../providers/searchDataService";
@@ -28,7 +28,7 @@ export class WinkOnboardingPage extends OnboardingPageBase implements OnInit {
 
     // ctor
     constructor(
-        app: IonicApp,
+        app: App,
         opent2tBridgeService: OpenT2TBridgeService,
         searchDataService: SearchDataService,
         navParams: NavParams,

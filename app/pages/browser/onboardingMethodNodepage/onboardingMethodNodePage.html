@@ -4,7 +4,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#f of files" (click)="browseFile(f)">
+        <ion-item item-text-wrap *ngFor="let f of files" (click)="browseFile(f)">
         {{f}}
         </ion-item>
     </ion-list>

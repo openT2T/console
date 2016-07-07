@@ -1,5 +1,5 @@
 import {Device} from '../model/device';
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {TranslatorsPage} from '../pages/translatorsPage/translatorsPage';
 import 'rxjs/Rx';
 import {doAlert} from '../model/utils';

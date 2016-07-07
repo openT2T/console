@@ -6,7 +6,7 @@
     <div [hidden]="!opent2tBridgeService.devices.length">
         <h2>Connected Translators</h2>
         <ion-list>
-            <ion-item item-text-wrap *ngFor="#item of opent2tBridgeService.devices">
+            <ion-item item-text-wrap *ngFor="let item of opent2tBridgeService.devices">
                 {{item.name}}
             </ion-item>
         </ion-list>
@@ -16,7 +16,7 @@
         Here are some types of things you can connect to via translators.
     </p>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#item of translators" (click)="connect(item)">
+        <ion-item item-text-wrap *ngFor="let item of translators" (click)="connect(item)">
             {{item.split('.')[item.split('.').length - 1]}}
         </ion-item>
     </ion-list>

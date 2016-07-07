@@ -1,5 +1,5 @@
-import {Page, IonicApp, NavParams, Nav} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {Page, App, NavParams, Nav} from "ionic-angular";
+import {OnInit} from "@angular/core";
 
 import {ThingFiles} from "../../model/thingFiles";
 import {Device} from "../../model/device";
@@ -24,7 +24,7 @@ export abstract class OnboardingPageBase implements OnInit {
 
     // constructor
     constructor(
-        private app: IonicApp,
+        private app: App,
         private opent2tBridgeService: OpenT2TBridgeService,
         private searchDataService: SearchDataService,
         protected navParams: NavParams) {

@@ -1,5 +1,5 @@
 import {Page, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {SearchDataService} from "../../../providers/searchDataService";
 import {doAlert} from "../../../model/utils";
 

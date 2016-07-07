@@ -4,7 +4,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#t of things" (click)="browseThing(t)">
+        <ion-item item-text-wrap *ngFor="let t of things" (click)="browseThing(t)">
         {{t}}
         </ion-item>
     </ion-list>

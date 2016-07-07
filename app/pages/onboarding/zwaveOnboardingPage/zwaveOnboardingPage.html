@@ -4,7 +4,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#item of items" (click)="connect(item)">
+        <ion-item item-text-wrap *ngFor="let item of items" (click)="connect(item)">
             {{item.manufacturer}} |
             {{item.name}}
         </ion-item>

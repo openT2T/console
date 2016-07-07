@@ -49,7 +49,7 @@
     </ion-list>
 
     <ion-list [hidden]="!winkService.user.isSignedIn">
-        <ion-item item-text-wrap *ngFor="#device of winkService.devices" (click)="connect(device)">
+        <ion-item item-text-wrap *ngFor="let device of winkService.devices" (click)="connect(device)">
             {{device.name}} | {{device.model_name}}
         </ion-item>
     </ion-list>

@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {VoiceHandlersDataService} from "../../../providers/voiceHandlersDataService";
 import {VoiceHandlerPage} from "../voiceHandlerPage/voiceHandlerPage";
 import {doAlert} from "../../../model/utils";
