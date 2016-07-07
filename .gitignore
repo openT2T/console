@@ -1,0 +1,11 @@
+#plugins, build
+node_modules
+platforms
+plugins
+www/build
+
+# miscellaneous
+.tmp
+logs
+*.log
+winkConfig.ts
