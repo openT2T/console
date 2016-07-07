@@ -92,14 +92,15 @@ This app requires some API secrets from external services. Configure them here, 
 ### Wink Configuration
 Create winkConfig.ts file under "app\pages\onboarding\winkOnboardingPage" with the following contents.
 
-    // Configuration for communicating with the WINK service.
+```ts
     export class WinkConfig {
 
         public static API_ENDPOINT: string = "https://api.wink.com";
         public static CLIENT_ID: string = "";
         public static CLIENT_SECRET: string = "";
     }
-    
+```
+
 Next, populate the the client ID and Secret values (you will need to get these from Wink / Quirky as documented on their site). This file is listed in .gitignore to help avoid accidental check-in of these secrets.
 
 ## Common Development Workflows
