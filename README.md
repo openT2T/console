@@ -15,7 +15,7 @@ Get your dev environment set up (PC or Mac):
 Install the Ionic Framework, Cordova and Typings using npm. Note that we are using ionic 2, which is currently in beta.
 
 ```bash
-$ npm install -g ionic@2.0.0-beta.19 cordova@6.0.0 gulp@3.9.1 tslint@3.6.0 typescript@1.8.9
+$ npm install -g ionic@2.0.0-beta.10 cordova@6.2.0 gulp@3.9.1 tslint@3.13.0 typescript@1.8.10
 ```
 
 ## Get the Source
