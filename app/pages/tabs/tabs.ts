@@ -9,6 +9,6 @@ import {SettingsPage} from "../settingsPage/settingsPage";
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab"s root Page
-  translatorsRoot: any = TranslatorsPage;
-  settingsRoot: any = SettingsPage;
+  translatorsRoot = TranslatorsPage;
+  settingsRoot = SettingsPage;
 }

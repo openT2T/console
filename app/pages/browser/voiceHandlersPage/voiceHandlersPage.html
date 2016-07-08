@@ -1,7 +1,8 @@
-<ion-navbar *navbar>
-    <ion-title>Browse Voice Handlers</ion-title>
-</ion-navbar>
-
+<ion-header>
+    <ion-navbar>
+        <ion-title>Browse Voice Handlers</ion-title>
+    </ion-navbar>
+</ion-header>
 <ion-content padding>
     <ion-list>
         <ion-item item-text-wrap *ngFor="let voiceHandler of voiceHandlers" (click)="browseVoiceHandler(voiceHandler)">

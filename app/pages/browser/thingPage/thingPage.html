@@ -1,19 +1,21 @@
-<ion-navbar *navbar>
-  <ion-title>{{name}}</ion-title>
-</ion-navbar>
-
+<ion-header>
+    <ion-navbar>
+        <ion-navbar>
+            <ion-title>{{name}}</ion-title>
+        </ion-navbar>
+</ion-header>
 <ion-content padding>
     <ion-list>
         <ion-item item-text-wrap *ngFor="let f of files" (click)="browseFile(f)">
-        {{f}}
+            {{f}}
         </ion-item>
     </ion-list>
-    
+
     <br/>
     <h3> Files returned using the search API: </h3>
     <ion-list>
         <ion-item item-text-wrap *ngFor="let s of searchResults" (click)="browseSearchedFile(s)">
-        {{s}}
+            {{s}}
         </ion-item>
     </ion-list>
 </ion-content>
