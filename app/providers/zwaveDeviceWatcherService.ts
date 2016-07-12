@@ -1,4 +1,4 @@
-import {Injectable} from "angular2/core";
+import {Injectable} from "@angular/core";
 
 // declare cordova to call the ZWave cordova plugin for typescript.
 declare var cordova: any;

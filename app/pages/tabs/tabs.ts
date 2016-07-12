@@ -7,8 +7,14 @@ import {SettingsPage} from "../settingsPage/settingsPage";
   templateUrl: "build/pages/tabs/tabs.html"
 })
 export class TabsPage {
-  // this tells the tabs component which Pages
-  // should be each tab"s root Page
-  translatorsRoot: any = TranslatorsPage;
-  settingsRoot: any = SettingsPage;
+
+  private translatorsRoot: any;
+  private settingsRoot: any;
+
+  constructor() {
+    // this tells the tabs component which Pages
+    // should be each tab"s root Page
+    this.translatorsRoot = TranslatorsPage;
+    this.settingsRoot = SettingsPage;
+  }
 }

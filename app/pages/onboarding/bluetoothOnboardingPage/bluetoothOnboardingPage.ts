@@ -1,5 +1,5 @@
-import {Page, IonicApp, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {Page, App, NavParams} from "ionic-angular";
+import {OnInit} from "@angular/core";
 import {OnboardingPageBase} from "../onboardingPageBase";
 import {SearchDataService} from "../../../providers/searchDataService";
 import {OpenT2TBridgeService} from "../../../providers/opent2tBridgeService";
@@ -20,7 +20,7 @@ export class BluetoothOnboardingPage extends OnboardingPageBase implements OnIni
 
     // ctor
     constructor(
-        app: IonicApp,
+        app: App,
         opent2tBridgeService: OpenT2TBridgeService,
         searchDataService: SearchDataService,
         navParams: NavParams,

@@ -1,5 +1,5 @@
-import {Page, IonicApp, NavParams, Nav} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {Page, App, NavParams, Nav} from "ionic-angular";
+import {ViewChild, OnInit} from "@angular/core";
 
 import {ThingFiles} from "../../model/thingFiles";
 import {Device} from "../../model/device";
@@ -20,17 +20,16 @@ export abstract class OnboardingPageBase implements OnInit {
     schema: string = null;
 
     // nav used to go back to home page after onboarding done.
-    private nav = null;
+    @ViewChild(Nav) nav: Nav;
 
     // constructor
     constructor(
-        private app: IonicApp,
+        private app: App,
         private opent2tBridgeService: OpenT2TBridgeService,
         private searchDataService: SearchDataService,
         protected navParams: NavParams) {
 
         this.files = this.navParams.get("files");
-        this.nav = this.app.getComponent("nav");
     }
 
     // event handler for page init

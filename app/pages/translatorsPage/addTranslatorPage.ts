@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {TranslatorsDataService} from "../../providers/translatorsDataService";
 import {SearchDataService} from "../../providers/searchDataService";
 import {BluetoothOnboardingPage} from "../onboarding/bluetoothOnboardingPage/bluetoothOnboardingPage";
@@ -40,8 +40,8 @@ export class AddTranslatorPage implements OnInit {
                 this.devices = devices;
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
     }
 
@@ -84,8 +84,8 @@ export class AddTranslatorPage implements OnInit {
                     });
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
     }
 

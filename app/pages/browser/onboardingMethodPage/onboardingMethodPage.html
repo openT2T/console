@@ -1,11 +1,12 @@
-<ion-navbar *navbar>
-  <ion-title>{{name}}</ion-title>
-</ion-navbar>
-
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{name}}</ion-title>
+    </ion-navbar>
+</ion-header>
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#item of items" (click)="browseItem(item)">
-        {{item}}
+        <ion-item item-text-wrap *ngFor="let item of items" (click)="browseItem(item)">
+            {{item}}
         </ion-item>
     </ion-list>
 </ion-content>

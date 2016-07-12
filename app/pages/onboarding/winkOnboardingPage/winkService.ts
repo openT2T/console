@@ -1,5 +1,5 @@
-import {Injectable} from "angular2/core";
-import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "angular2/http";
+import {Injectable} from "@angular/core";
+import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/Rx";
 import {WinkConfig} from "./winkConfig";
 import {WinkUser} from "./model/winkUser";
@@ -63,7 +63,7 @@ export class WinkService {
                 return this.handleSignInResponse(res);
             }).catch((err) => {
                 this.user.isSignedIn = false;
-                console.log("Error: " + err.text());
+                console.log("Error: " + JSON.stringify(err));
                 return Promise.reject<WinkUser>(err);
             });
     }
@@ -96,7 +96,7 @@ export class WinkService {
                 return this.handleEnumerateDevicesResponse(res, idKeyFilter);
             }).catch((err) => {
                 this.user.isSignedIn = false;
-                console.log("Error: " + err.text());
+                console.log("Error: " + JSON.stringify(err));
                 return Promise.reject<WinkUser>(err);
             });
     }

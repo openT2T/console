@@ -1,5 +1,6 @@
-import {App, Platform} from "ionic-angular";
-import {Http, HTTP_PROVIDERS} from "angular2/http";
+import {Component} from '@angular/core';
+import {ionicBootstrap, Platform} from "ionic-angular";
+import {Http, HTTP_PROVIDERS} from "@angular/http";
 
 import {GenericGitHubDataService} from "./providers/genericGitHubDataService";
 import {TranslatorsDataService} from "./providers/translatorsDataService";
@@ -11,12 +12,10 @@ import {OpenT2TBridgeService} from "./providers/opent2tBridgeService";
 import {TabsPage} from "./pages/tabs/tabs";
 
 // https://angular.io/docs/ts/latest/api/core/Type-interface.html
-import {Type} from "angular2/core";
+import {Type} from "@angular/core";
 
-@App({
-    templateUrl: "build/app.html",
-    providers: [ OpenT2TBridgeService, GenericGitHubDataService, TranslatorsDataService, VoiceHandlersDataService, SearchDataService, OnboardingDataService ],
-    config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+@Component({
+    templateUrl: "build/app.html"
 })
 export class MyApp {
     rootPage: Type = TabsPage;
@@ -40,3 +39,18 @@ export class MyApp {
         });
     }
 }
+
+// Pass the main app component as the first argument
+// Pass any providers for your app in the second argument
+// Set any config for your app as the third argument:
+// http://ionicframework.com/docs/v2/api/config/Config/
+
+ionicBootstrap(MyApp, [OpenT2TBridgeService, GenericGitHubDataService, TranslatorsDataService, VoiceHandlersDataService, SearchDataService, OnboardingDataService], {
+    backButtonText: 'Go Back',
+    iconMode: 'ios',
+    modalEnter: 'modal-slide-in',
+    modalLeave: 'modal-slide-out',
+    tabbarPlacement: 'bottom',
+    pageTransition: 'ios',
+    tabSubPages: false
+});

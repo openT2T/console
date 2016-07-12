@@ -34,16 +34,16 @@ export class ThingPage implements OnInit {
                 this.files = files;
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
 
     this.searchDataService.initiateGetFilesListBySearch(this.name)
             .then((files) => {
                 this.searchResults = files.toList();
              }).catch((err) => {
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
   }
 

@@ -1,5 +1,5 @@
 import {Page, NavController} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {TranslatorsDataService} from "../../providers/translatorsDataService";
 import {AddTranslatorPage} from "./addTranslatorPage";
 import {OpenT2TBridgeService} from "../../providers/opent2tBridgeService";
@@ -26,8 +26,8 @@ export class TranslatorsPage implements OnInit {
                 this.translators = translators;
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
     }
 

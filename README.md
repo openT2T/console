@@ -15,7 +15,7 @@ Get your dev environment set up (PC or Mac):
 Install the Ionic Framework, Cordova and Typings using npm. Note that we are using ionic 2, which is currently in beta.
 
 ```bash
-$ npm install -g ionic@2.0.0-beta.19 cordova@6.0.0 gulp@3.9.1 tslint@3.6.0 typescript@1.8.9
+$ npm install -g ionic@2.0.0-beta.10 cordova@6.2.0 gulp@3.9.1 tslint@3.13.0 typescript@1.8.10
 ```
 
 ## Get the Source
@@ -92,14 +92,15 @@ This app requires some API secrets from external services. Configure them here, 
 ### Wink Configuration
 Create winkConfig.ts file under "app\pages\onboarding\winkOnboardingPage" with the following contents.
 
-    // Configuration for communicating with the WINK service.
+```ts
     export class WinkConfig {
 
         public static API_ENDPOINT: string = "https://api.wink.com";
         public static CLIENT_ID: string = "";
         public static CLIENT_SECRET: string = "";
     }
-    
+```
+
 Next, populate the the client ID and Secret values (you will need to get these from Wink / Quirky as documented on their site). This file is listed in .gitignore to help avoid accidental check-in of these secrets.
 
 ## Common Development Workflows

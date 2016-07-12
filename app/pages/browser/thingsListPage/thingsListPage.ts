@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {TranslatorsDataService} from "../../../providers/translatorsDataService";
 import {ThingPage} from "../thingPage/thingPage";
 import {FileContentPage} from "../fileContentPage/fileContentPage";
@@ -29,8 +29,8 @@ export class ThingsListPage implements OnInit {
                 this.things = things;  // things include the schema file name as well
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
   }
 

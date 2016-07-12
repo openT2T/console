@@ -1,10 +1,12 @@
-<ion-navbar *navbar>
-    <ion-title>Browse Onboarding Methods</ion-title>
-</ion-navbar>
+<ion-header>
+    <ion-navbar>
+        <ion-title>Browse Onboarding Methods</ion-title>
+    </ion-navbar>
+</ion-header>
 
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="#m of onboardingMethods" (click)="browseOnboardingMethod(m)">
+        <ion-item item-text-wrap *ngFor="let m of onboardingMethods" (click)="browseOnboardingMethod(m)">
             {{m}}
         </ion-item>
     </ion-list>

@@ -1,5 +1,5 @@
 import {Page, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {SearchDataService} from "../../../providers/searchDataService";
 import {doAlert} from "../../../model/utils";
 
@@ -24,8 +24,8 @@ export class SearchFileContentPage implements OnInit {
                 this.content = content;  // things include the schema file name as well
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
   }
 

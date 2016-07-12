@@ -1,5 +1,5 @@
 import {Page, NavController} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {OnboardingDataService} from "../../../providers/onboardingDataService";
 import {OnboardingMethodPage} from "../onboardingMethodPage/onboardingMethodPage";
 import {doAlert} from "../../../model/utils";
@@ -25,8 +25,8 @@ export class OnboardingMethodsPage implements OnInit {
                 this.onboardingMethods = methods;
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
     }
 

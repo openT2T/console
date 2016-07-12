@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from "ionic-angular";
-import {OnInit} from "angular2/core";
+import {OnInit} from "@angular/core";
 import {VoiceHandlersDataService} from "../../../providers/voiceHandlersDataService";
 import {VoiceHandlerPage} from "../voiceHandlerPage/voiceHandlerPage";
 import {doAlert} from "../../../model/utils";
@@ -28,8 +28,8 @@ export class VoiceHandlerListPage implements OnInit {
                 this.handlers = handlers;
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
   }
 
