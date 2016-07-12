@@ -26,8 +26,8 @@ export class SchemasPage implements OnInit {
                 this.schemas = schemas;
             }).catch((err) => {
                 // there was an error. display it on screen.
-                console.log(err.text());
-                doAlert(err.text());
+                console.log(JSON.stringify(err));
+                doAlert(JSON.stringify(err));
             });
     }
 

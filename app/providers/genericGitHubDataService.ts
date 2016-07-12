@@ -19,7 +19,7 @@ export class GenericGitHubDataService {
             .then((res) => {
                 return this.handleGetDirectoriesInPath(res);
             }).catch((err) => {
-                console.log(err.text());
+                console.log(JSON.stringify(err));
                 return Promise.reject<string[]>(err);
             });
     }
@@ -53,7 +53,7 @@ export class GenericGitHubDataService {
             .then((res) => {
                 return this.handleGetDirectoriesAndFilesInPath(res);
             }).catch((err) => {
-                console.log(err.text());
+                console.log(JSON.stringify(err));
                 return Promise.reject<string[]>(err);
             });
     }
@@ -86,7 +86,7 @@ export class GenericGitHubDataService {
             .then((res) => {
                 return this.handleGetFilesInPath(res);
             }).catch((err) => {
-                console.log(err.text());
+                console.log(JSON.stringify(err));
                 return Promise.reject<string[]>(err);
             });
     }
@@ -119,7 +119,7 @@ export class GenericGitHubDataService {
             .then((res) => {
                 return this.handleGetFileContentInPath(res);
             }).catch((err) => {
-                console.log(err.text());
+                console.log(JSON.stringify(err));
                 return Promise.reject<string>(err);
             });
     }

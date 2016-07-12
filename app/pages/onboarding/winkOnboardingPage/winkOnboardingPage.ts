@@ -61,7 +61,7 @@ export class WinkOnboardingPage extends OnboardingPageBase implements OnInit {
                         });
                 }).catch((err) => {
                     // there was an error. display it on screen.
-                    this.error = JSON.parse(err.text()).error_description;
+                    this.error = JSON.parse(JSON.stringify(err)).error_description;
                 });
         }
     }

@@ -63,7 +63,7 @@ export class WinkService {
                 return this.handleSignInResponse(res);
             }).catch((err) => {
                 this.user.isSignedIn = false;
-                console.log("Error: " + err.text());
+                console.log("Error: " + JSON.stringify(err));
                 return Promise.reject<WinkUser>(err);
             });
     }
@@ -96,7 +96,7 @@ export class WinkService {
                 return this.handleEnumerateDevicesResponse(res, idKeyFilter);
             }).catch((err) => {
                 this.user.isSignedIn = false;
-                console.log("Error: " + err.text());
+                console.log("Error: " + JSON.stringify(err));
                 return Promise.reject<WinkUser>(err);
             });
     }
