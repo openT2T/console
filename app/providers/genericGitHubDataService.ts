@@ -14,7 +14,7 @@ export class GenericGitHubDataService {
     // initiates getting the list of directories inside a repository Url.
     public initiateGetDirectoriesInPath(repositoryApiUrl: string): Promise<string[]> {
 
-    return this.http.get(repositoryApiUrl)
+        return this.http.get(repositoryApiUrl)
             .toPromise()
             .then((res) => {
                 return this.handleGetDirectoriesInPath(res);
@@ -114,6 +114,8 @@ export class GenericGitHubDataService {
     // initiates getting the file content from a repository Url.
     public initiateGetFileContentInPath(repositoryApiUrl: string): Promise<string> {
 
+        console.log('initiating get file content: ' + repositoryApiUrl);
+
         return this.http.get(repositoryApiUrl)
             .toPromise()
             .then((res) => {
@@ -132,7 +134,8 @@ export class GenericGitHubDataService {
             return Promise.reject<string>(res);
         }
         else {
-            let content: string = atob((<GitHubFileContentItem>JSON.parse(res.text())).content);
+
+            let content: string = window.atob((<GitHubFileContentItem>JSON.parse(res.text())).content);
 
             // for XML files, there is a UTF-8 Byte Order Mark (BOM) at the beginning of the file; 
             // remove it so that the file content can be displayed correctly.
@@ -144,5 +147,4 @@ export class GenericGitHubDataService {
             return Promise.resolve<string>(content);
         }
     }
-
 }
