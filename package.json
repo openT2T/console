@@ -50,7 +50,10 @@
   ],
   "cordovaPlatforms": [
     "windows",
-    "android"
+    {
+      "platform": "android",
+      "locator": "windows"
+    }
   ],
   "repository": {
     "type": "git",

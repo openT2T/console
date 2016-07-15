@@ -80,10 +80,20 @@ $ gulp build
 $ ionic run windows --archs=x64
 ```
 
-? Note: At this time the --livereload option is not working on Windows.
+? Note: At this time the --livereload option is not working on Windows, however you can try it for other platforms.
 
-After a successful build, you can also open the CordovaApp.sln file under platforms\windows in Visual Studio 2015, set the 
+There is another way to build and run the Cordova app on Windows, which some might find easier. Specifically:
+
+```bash
+$ gulp build
+$ ionic build windows --archs=x64
+```
+
+Once you have a successful build, open the CordovaApp.sln file under platforms\windows in Visual Studio 2015, set the 
 CordovaApp.Windows10 project as startup, and then just run from within Visual Studio. This is helpful for debugging.
+
+? Note: If you get a build break in Visual Studio 2015, make sure all the different projects are set to build the same way,
+e.g. make sure all the different projects in the solution are building for Debug | x64.
 
 ## Service Configuration
 

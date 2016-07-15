@@ -1,4 +1,4 @@
-import {Page, App, NavParams} from "ionic-angular";
+import {Page, App, Nav, NavParams} from "ionic-angular";
 import {OnInit} from "@angular/core";
 import {OnboardingPageBase} from "../onboardingPageBase";
 
@@ -27,11 +27,12 @@ export class ZWaveOnboardingPage extends OnboardingPageBase implements OnInit {
         app: App,
         opent2tBridgeService: OpenT2TBridgeService,
         searchDataService: SearchDataService,
+        nav: Nav,
         navParams: NavParams,
         private zwaveDeviceWatcherService: ZWaveDeviceWatcherService) {
 
         // initialize base class
-        super(app, opent2tBridgeService, searchDataService, navParams);
+        super(app, opent2tBridgeService, searchDataService, nav, navParams);
 
         // initialize additional state for this onboarding page
         this.manufacturerNameFilter = this.navParams.get("manufacturerNameFilter");
