@@ -19,14 +19,12 @@ export abstract class OnboardingPageBase implements OnInit {
     jsTranslator: string = null;
     schema: string = null;
 
-    // nav used to go back to home page after onboarding done.
-    @ViewChild(Nav) nav: Nav;
-
     // constructor
     constructor(
         private app: App,
         private opent2tBridgeService: OpenT2TBridgeService,
         private searchDataService: SearchDataService,
+        protected nav: Nav,
         protected navParams: NavParams) {
 
         this.files = this.navParams.get("files");
