@@ -15,17 +15,17 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "1.1.1",
-    "del": "2.2.1",
+    "del": "2.2.0",
     "gulp": "3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-sass": "2.3.2",
-    "gulp-tslint": "^5.0.0",
-    "gulp-watch": "4.3.8",
-    "strip-sourcemap-loader": "0.0.1",
-    "tslint": "^3.13.0",
-    "typescript": "1.8.10",
-    "webpack": "1.13.1"
+    "gulp-watch": "4.3.5",
+    "ionic-gulp-browserify-typescript": "2.0.0",
+    "ionic-gulp-fonts-copy": "^1.0.0",
+    "ionic-gulp-html-copy": "^1.0.0",
+    "ionic-gulp-sass-build": "^1.0.0",
+    "ionic-gulp-scripts-copy": "^2.0.0",
+    "ionic-gulp-tslint": "^1.0.0",
+    "tslint-ionic-rules": "^0.0.3",
+    "run-sequence": "1.1.5"
   },
   "name": "opent2t-console",
   "version": "1.0.0",
