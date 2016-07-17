@@ -9,14 +9,17 @@ import {doAlert} from "../../../model/utils";
 })
 export class VoiceHandlerListPage implements OnInit {
 
+  // page navigations
+  private voiceHandlerPage = VoiceHandlerPage;
+
   // handlers in the repository
   handlers: string[] = null;
   type: string = null;
 
   // ctor 
   constructor(private nav: NavController,
-              private navParams: NavParams,
-              private voiceHandlersDataService: VoiceHandlersDataService) {
+    private navParams: NavParams,
+    private voiceHandlersDataService: VoiceHandlersDataService) {
     this.type = navParams.get("type");
   }
 
@@ -24,17 +27,12 @@ export class VoiceHandlerListPage implements OnInit {
   ngOnInit() {
     console.log("type: " + this.type);
     this.voiceHandlersDataService.initiateGetVoiceHandlersList(this.type)
-            .then((handlers) => {
-                this.handlers = handlers;
-            }).catch((err) => {
-                // there was an error. display it on screen.
-                console.log(JSON.stringify(err));
-                doAlert(JSON.stringify(err));
-            });
+      .then((handlers) => {
+        this.handlers = handlers;
+      }).catch((err) => {
+        // there was an error. display it on screen.
+        console.log(JSON.stringify(err));
+        doAlert(JSON.stringify(err));
+      });
   }
-
-  browseHandler(h: string) {
-    this.nav.push(VoiceHandlerPage, {type: this.type, name: h});
-  }
-
 }

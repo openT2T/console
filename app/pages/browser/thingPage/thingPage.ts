@@ -20,9 +20,9 @@ export class ThingPage implements OnInit {
 
   // ctor 
   constructor(private nav: NavController,
-              private navParams: NavParams,
-              private translatorsDataService: TranslatorsDataService,
-              private searchDataService: SearchDataService) {
+    private navParams: NavParams,
+    private translatorsDataService: TranslatorsDataService,
+    private searchDataService: SearchDataService) {
     this.schema = navParams.get("schema");
     this.name = navParams.get("name");
   }
@@ -30,30 +30,31 @@ export class ThingPage implements OnInit {
   // handles page init.
   ngOnInit() {
     this.translatorsDataService.initiateGetThingFiles(this.schema, this.name)
-            .then((files) => {
-                this.files = files;
-            }).catch((err) => {
-                // there was an error. display it on screen.
-                console.log(JSON.stringify(err));
-                doAlert(JSON.stringify(err));
-            });
+      .then((files) => {
+        this.files = files;
+      }).catch((err) => {
+        // there was an error. display it on screen.
+        console.log(JSON.stringify(err));
+        doAlert(JSON.stringify(err));
+      });
 
     this.searchDataService.initiateGetFilesListBySearch(this.name)
-            .then((files) => {
-                this.searchResults = files.toList();
-             }).catch((err) => {
-                console.log(JSON.stringify(err));
-                doAlert(JSON.stringify(err));
-            });
+      .then((files) => {
+        this.searchResults = files.toList();
+      }).catch((err) => {
+        console.log(JSON.stringify(err));
+        doAlert(JSON.stringify(err));
+      });
   }
 
+  // browses to a thing file
   browseFile(f: string) {
     let path = this.schema + "/" + this.name + "/js/" + f;
-    this.nav.push(FileContentPage, {path: path, name: f});
+    this.nav.push(FileContentPage, { path: path, name: f });
   }
 
+  // browses to a searched file (files related to this thing)
   browseSearchedFile(f: string) {
-    this.nav.push(SearchFileContentPage, {path: f, name: f});
+    this.nav.push(SearchFileContentPage, { path: f, name: f });
   }
-
 }

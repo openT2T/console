@@ -12,13 +12,13 @@
         </ion-card-header>
         <ion-card-content>
             <ion-list no-lines>
-                <ion-item (click)="browseSchemas()">
+                <ion-item [navPush]="schemasPage">
                     Translators
                 </ion-item>
-                <ion-item (click)="browseOnboardingMethods()">
+                <ion-item [navPush]="onboardingMethodsPage">
                     Onboarding
                 </ion-item>
-                <ion-item (click)="browseVoiceHandlers()">
+                <ion-item [navPush]="voiceHandlersPage">
                     Voice
                 </ion-item>
             </ion-list>
@@ -29,6 +29,6 @@
     </ion-card>
 
     <!--Miscellaneous-->
-    <button success full (click)="pluginTest()">Plugin Test</button>
+    <button success full [navPush]="pluginTestPage">Plugin Test</button>
 
 </ion-content>

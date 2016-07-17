@@ -9,7 +9,11 @@ import {doAlert} from "../../model/utils";
     templateUrl: "build/pages/translatorsPage/translatorsPage.html",
 })
 export class TranslatorsPage implements OnInit {
-    translators: string[];
+
+    // page navigations
+    private addTranslatorPage = AddTranslatorPage;
+
+    private translators: string[];
 
     // ctor
     constructor(
@@ -29,10 +33,5 @@ export class TranslatorsPage implements OnInit {
                 console.log(JSON.stringify(err));
                 doAlert(JSON.stringify(err));
             });
-    }
-
-    // connect to a translator 
-    connect(item: string) {
-        this.nav.push(AddTranslatorPage, { name: item });
     }
 }

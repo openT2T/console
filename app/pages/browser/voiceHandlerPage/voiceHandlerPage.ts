@@ -16,8 +16,8 @@ export class VoiceHandlerPage implements OnInit {
 
   // ctor 
   constructor(private nav: NavController,
-              private navParams: NavParams,
-              private voiceHandlersDataService: VoiceHandlersDataService) {
+    private navParams: NavParams,
+    private voiceHandlersDataService: VoiceHandlersDataService) {
     this.type = navParams.get("type");
     this.name = navParams.get("name");
   }
@@ -25,18 +25,18 @@ export class VoiceHandlerPage implements OnInit {
   // handles page init.
   ngOnInit() {
     this.voiceHandlersDataService.initiateGetVoiceHandlersFiles(this.type, this.name)
-            .then((files) => {
-                this.files = files;
-            }).catch((err) => {
-                // there was an error. display it on screen.
-                console.log(JSON.stringify(err));
-                doAlert(JSON.stringify(err));
-            });
+      .then((files) => {
+        this.files = files;
+      }).catch((err) => {
+        // there was an error. display it on screen.
+        console.log(JSON.stringify(err));
+        doAlert(JSON.stringify(err));
+      });
   }
 
+  // browses to a voice handlerfile
   browseFile(f: string) {
     let path = this.type + "/" + this.name + "/" + f;
-    this.nav.push(VoiceHandlerFileContentPage, {path: path, name: f});
+    this.nav.push(VoiceHandlerFileContentPage, { path: path, name: f });
   }
-
 }

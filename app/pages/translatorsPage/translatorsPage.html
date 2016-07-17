@@ -17,7 +17,8 @@
         Here are some types of things you can connect to via translators.
     </p>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="let item of translators" (click)="connect(item)">
+        <ion-item item-text-wrap *ngFor="let item of translators" 
+                  [navPush]="[ addTranslatorPage, { name: item } ]">
             {{item.split('.')[item.split('.').length - 1]}}
         </ion-item>
     </ion-list>
