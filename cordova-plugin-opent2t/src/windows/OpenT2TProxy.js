@@ -55,9 +55,11 @@ module.exports = {
                     device.props = deviceProps.props;
                 }
 
-                bridge.addDevice(device, xml, script, ".");
-
-                successCallback("device added");
+                bridge.addDeviceAsync(device, xml, script, ".").then(function () {
+                    successCallback("device added");
+                }, function (err) {
+                    errorCallback('Exception: ' + err);
+                });
             } else {
                 errorCallback('failed to create device');
                 return;
