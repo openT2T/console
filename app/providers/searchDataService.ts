@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/Rx";
 import {GenericGitHubDataService} from "./genericGitHubDataService";
 import {ThingFiles} from "../model/thingFiles";
@@ -19,7 +18,7 @@ export class SearchDataService {
     private ONBOARDING_BASEURL = "https://api.github.com/repos/opent2t/onboarding/contents";
 
     // ctor
-    constructor(private http: Http, private genericGitHubDataService: GenericGitHubDataService) {
+    constructor(private genericGitHubDataService: GenericGitHubDataService) {
     }
 
     // for a given search keyword (thing name), initiates getting the list of files from the repository.

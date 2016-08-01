@@ -1,14 +1,15 @@
 import {Injectable} from "@angular/core";
-import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "@angular/http";
+import {Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/Rx";
 import {GitHubFileItem} from "../model/gitHub/gitHubFileItem";
 import {GitHubFileContentItem} from "../model/gitHub/gitHubFileContentItem";
+import {AuthHttp} from 'angular2-jwt';
 
 @Injectable()
 export class GenericGitHubDataService {
 
     // ctor
-    constructor(private http: Http) {
+    constructor(private http: AuthHttp) {
     }
 
     // initiates getting the list of directories inside a repository Url.
