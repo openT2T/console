@@ -17,28 +17,30 @@ export class ThingsListPage implements OnInit {
 
   // ctor 
   constructor(private nav: NavController,
-              private navParams: NavParams,
-              private translatorsDataService: TranslatorsDataService) {
+    private navParams: NavParams,
+    private translatorsDataService: TranslatorsDataService) {
     this.schema = navParams.get("schema");
   }
 
   // handles page init.
   ngOnInit() {
     this.translatorsDataService.initiateGetThingsList(this.schema)
-            .then((things) => {
-                this.things = things;  // things include the schema file name as well
-            }).catch((err) => {
-                // there was an error. display it on screen.
-                console.log(JSON.stringify(err));
-                doAlert(JSON.stringify(err));
-            });
+      .then((things) => {
+        this.things = things;  // things include the schema file name as well
+      }).catch((err) => {
+        // there was an error. display it on screen.
+        console.log(JSON.stringify(err));
+        doAlert(JSON.stringify(err));
+      });
   }
 
+  // browses to a thing
   browseThing(t: string) {
-    if (t.endsWith(".xml"))
-      this.nav.push(FileContentPage, {path: this.schema + "/" + t, name: t});
-    else
-      this.nav.push(ThingPage, {schema: this.schema, name: t});
+    if (t.endsWith(".xml")) {
+      this.nav.push(FileContentPage, { path: this.schema + "/" + t, name: t });
+    }
+    else {
+      this.nav.push(ThingPage, { schema: this.schema, name: t });
+    }
   }
-
 }

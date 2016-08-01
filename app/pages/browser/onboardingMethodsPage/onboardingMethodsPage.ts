@@ -9,13 +9,16 @@ import {doAlert} from "../../../model/utils";
 })
 export class OnboardingMethodsPage implements OnInit {
 
+    // page navigations
+    private onboardingMethodPage = OnboardingMethodPage
+
     // onboarding methods in the repository.
     onboardingMethods: string[] = null;
     error: string = null;
 
     // ctor
     constructor(private onboardingDataService: OnboardingDataService,
-                private nav: NavController) {
+        private nav: NavController) {
     }
 
     // handles page init.
@@ -28,9 +31,5 @@ export class OnboardingMethodsPage implements OnInit {
                 console.log(JSON.stringify(err));
                 doAlert(JSON.stringify(err));
             });
-    }
-
-    browseOnboardingMethod(method: string) {
-      this.nav.push(OnboardingMethodPage, {name: method});
     }
 }

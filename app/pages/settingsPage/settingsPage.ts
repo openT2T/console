@@ -10,27 +10,13 @@ import {GitHubUser} from "../../model/gitHub/gitHubUser";
 })
 export class SettingsPage {
 
+    // page navigations
+    private pluginTestPage = PluginTestPage;
+    private schemasPage = SchemasPage;
+    private onboardingMethodsPage = OnboardingMethodsPage
+    private voiceHandlersPage = VoiceHandlersPage;
+
     // ctor
     constructor(private nav: NavController) {
-    }
-
-    // navigates to the plugin test page
-    pluginTest() {
-        this.nav.push(PluginTestPage);
-    }
-
-    // navigates to the schema browser
-    browseSchemas() {
-        this.nav.push(SchemasPage);
-    }
-
-    // navigates to the onboarding method browser
-    browseOnboardingMethods() {
-        this.nav.push(OnboardingMethodsPage);
-    }
-
-    // navigates to the voice handler browser
-    browseVoiceHandlers() {
-        this.nav.push(VoiceHandlersPage);
     }
 }
