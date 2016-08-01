@@ -28,6 +28,23 @@
         </ion-card-content>
     </ion-card>
 
+    <ion-content padding *ngIf="!authService.authenticated()">
+        <button block (click)="authService.login()">Login</button>
+    </ion-content>
+
+    <ion-card padding *ngIf="authService.authenticated()">
+        <ion-card>
+            <ion-item *ngIf="authService.user">
+                <ion-avatar item-left>
+                    <img src="{{ authService.user.picture }}">
+                </ion-avatar>
+                <h2>{{ authService.user.nickname }}</h2>
+                <p>{{ authService.user.email }}</p>
+            </ion-item>
+        </ion-card>
+        <button block (click)="authService.logout()">Logout</button>
+    </ion-card>
+
     <!--Miscellaneous-->
     <button success full [navPush]="pluginTestPage">Plugin Test</button>
 
