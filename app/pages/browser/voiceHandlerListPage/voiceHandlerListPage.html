@@ -5,7 +5,8 @@
 </ion-header>
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="let h of handlers" (click)="browseHandler(h)">
+        <ion-item item-text-wrap *ngFor="let h of handlers"
+                  [navPush]="[ voiceHandlerPage, { type: type, name: h } ]">
             {{h}}
         </ion-item>
     </ion-list>

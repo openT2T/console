@@ -32,9 +32,9 @@ export class OnboardingMethodNodePage implements OnInit {
             });
   }
 
+  // browses to a file
   browseFile(f: string) {
     let path = this.method + "/node/" + f;
     this.nav.push(OnboardingFileContentPage, {path: path, name: f});
   }
-
 }

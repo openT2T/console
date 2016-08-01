@@ -9,13 +9,16 @@ import {doAlert} from "../../../model/utils";
 })
 export class VoiceHandlersPage implements OnInit {
 
+    // page navigations
+    private voiceHandlerListPage = VoiceHandlerListPage;
+
     // schemas in the repository.
     voiceHandlers: string[] = null;
     error: string = null;
 
     // ctor
     constructor(private voiceHandlersDataService: VoiceHandlersDataService,
-                private nav: NavController) {
+        private nav: NavController) {
     }
 
     // handles page init.
@@ -28,9 +31,5 @@ export class VoiceHandlersPage implements OnInit {
                 console.log(JSON.stringify(err));
                 doAlert(JSON.stringify(err));
             });
-    }
-
-    browseVoiceHandler(voiceHandler: string) {
-      this.nav.push(VoiceHandlerListPage, {type: voiceHandler});
     }
 }

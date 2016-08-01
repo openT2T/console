@@ -45,6 +45,7 @@ export class AddTranslatorPage implements OnInit {
             });
     }
 
+    // adds a translator
     addTranslator(device: string) {
 
         this.searchDataService.initiateGetFilesListBySearch(device)
@@ -72,10 +73,10 @@ export class AddTranslatorPage implements OnInit {
 
                             this.nav.push(WinkOnboardingPage, { files: files, idKeyFilter: idKeyValue });
                         } else if (files.onboarding.endsWith("Manual.xml")) {
-                            
+
                             var deviceName = this.getOnboardingValue(manifestContent, "name");
                             var instructionsUrl = this.getOnboardingValue(manifestContent, "instructionsUrl");
-                            
+
                             this.nav.push(ManualOnboardingPage, { files: files, name: deviceName, instructionsUrl: instructionsUrl });
                         }
                         else {

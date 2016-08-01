@@ -6,8 +6,9 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item item-text-wrap *ngFor="let m of onboardingMethods" (click)="browseOnboardingMethod(m)">
-            {{m}}
+        <ion-item item-text-wrap *ngFor="let method of onboardingMethods"
+                    [navPush]="[ onboardingMethodPage, { name: method } ]">
+            {{ method }}
         </ion-item>
     </ion-list>
 </ion-content>

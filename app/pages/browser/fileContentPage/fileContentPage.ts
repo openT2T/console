@@ -12,20 +12,19 @@ export class FileContentPage implements OnInit {
   content: string;
 
   constructor(private navParams: NavParams,
-              private translatorsDataService: TranslatorsDataService) {
+    private translatorsDataService: TranslatorsDataService) {
     this.name = navParams.get("name");
     this.path = navParams.get("path");
   }
 
   ngOnInit() {
     this.translatorsDataService.initiateGetFileContent(this.path)
-            .then((content) => {
-                this.content = content;  // things include the schema file name as well
-            }).catch((err) => {
-                // there was an error. display it on screen.
-                console.log(JSON.stringify(err));
-                doAlert(JSON.stringify(err));
-            });
+      .then((content) => {
+        this.content = content;  // things include the schema file name as well
+      }).catch((err) => {
+        // there was an error. display it on screen.
+        console.log(JSON.stringify(err));
+        doAlert(JSON.stringify(err));
+      });
   }
-
 }

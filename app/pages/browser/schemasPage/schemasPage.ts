@@ -9,14 +9,17 @@ import {doAlert} from "../../../model/utils";
 })
 export class SchemasPage implements OnInit {
 
+    // page navigations
+    private thingsListPage = ThingsListPage;
+
     // schemas in the repository.
     schemas: string[] = null;
     error: string = null;
 
     // ctor
     constructor(private nav: NavController,
-                private navParams: NavParams,
-                private translatorsDataService: TranslatorsDataService) {
+        private navParams: NavParams,
+        private translatorsDataService: TranslatorsDataService) {
     }
 
     // handles page init.
@@ -29,9 +32,5 @@ export class SchemasPage implements OnInit {
                 console.log(JSON.stringify(err));
                 doAlert(JSON.stringify(err));
             });
-    }
-
-    browseTranslators(schema: string) {
-      this.nav.push(ThingsListPage, {schema: schema});
     }
 }
