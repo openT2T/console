@@ -77,4 +77,8 @@
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
     <plugin name="cordova-plugin-bluetoothle" spec="https://github.com/sgrebnov/cordova-plugin-bluetoothle.git" />
     <plugin name="cordova-open-zwave" version="0.0.1" src="https://github.com/vladimir-kotikov/cordova-open-zwave" />
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
 </widget>
