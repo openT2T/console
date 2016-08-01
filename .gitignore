@@ -1,8 +1,13 @@
-#plugins, build
+# Specifies files to intentionally ignore when using Git
+# http://git-scm.com/docs/gitignore
+
 node_modules
 platforms
 plugins
 www/build
+*.swp
+.DS_Store
+Thumbs.db
 
 # miscellaneous
 .tmp

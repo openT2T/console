@@ -12,10 +12,11 @@ Get your dev environment set up (PC or Mac):
 * [Install Node](https://nodejs.org/en/download/)
 * Choose your favorite IDE, e.g. [Visual Studio Code](https://code.visualstudio.com/).
 
-Install the Ionic Framework, Cordova and Typings using npm. Note that we are using ionic 2, which is currently in beta.
+Install the Ionic Framework and Cordova using npm. Note that we are using ionic 2, which is currently in beta.
 
 ```bash
-$ npm install -g ionic@2.0.0-beta.10 cordova@6.2.0 gulp@3.9.1 tslint@3.13.0 typescript@1.8.10
+$ npm install -g ionic@2.0.0-beta.32
+$ npm install -g cordova@6.2.0
 ```
 
 ## Get the Source
@@ -50,7 +51,6 @@ The following should work: "%USERPROFILE%\AppData\Roaming\npm".
 Congratulations, you are now set up for the basic development workflow! Just run:
 
 ```bash
-$ gulp build
 $ ionic serve
 ```
 
@@ -58,7 +58,6 @@ If you're feeling fancy, you can also try the [Ionic Lab](http://blog.ionic.io/i
 app will look in different devices:
 
 ```bash
-$ gulp build
 $ ionic serve --lab
 ```
 
@@ -69,14 +68,12 @@ native components.
 You can also run the following to emulate on a local android simulator (note: this requires the Android SDK on PC or Mac):
 
 ```bash
-$ gulp build
 $ ionic emulate android --livereload
 ```
 
 Finally, run the following to install and run on a local Windows simulator (note: this requires the Windows 10 SDK on a PC):
 
 ```bash
-$ gulp build
 $ ionic run windows --archs=x64
 ```
 
@@ -85,7 +82,6 @@ $ ionic run windows --archs=x64
 There is another way to build and run the Cordova app on Windows, which some might find easier. Specifically:
 
 ```bash
-$ gulp build
 $ ionic build windows --archs=x64
 ```
 
