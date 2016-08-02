@@ -93,10 +93,12 @@ e.g. make sure all the different projects in the solution are building for Debug
 
 ## Service Configuration
 
-This app requires some API secrets from external services. Configure them here, in order to use these services:
+This app requires some API secrets from external services. If you will be using any of these services, follow the instructions in this section to configure them.
 
-### Create Config File
-Create Config.ts file under the "app" folder with the following contents. This file is listed in .gitignore to help avoid accidental check-in of secrets.
+> This section is optional. If you are not using any of these external services, you can safely ignore it.
+
+### 1. Create Config File
+Create a `config.ts` file under the "app" folder with the following contents. This file is listed in `.gitignore` to help avoid accidental check-in of secrets.
 
 ```ts
     export class Config {
@@ -115,22 +117,22 @@ Create Config.ts file under the "app" folder with the following contents. This f
     }
 ```
 
-### Populate Config File with Configuration Values
+### 2. Populate Config File with Configuration Values
 Next, populate the configuration values per service in the following manner:
 
-1. Wink: Get a Client ID and Client Secret from Wink / Quirky as documented on their site, and paste into your config.ts.
+1. Wink: Get a Client ID and Client Secret from Wink / Quirky as documented on their site, and paste into your `config.ts`.
 2. Auth0: Get a Client ID and Client Secret from auth0 with the following process. If you get stuck, please refer to [this page](https://auth0.com/docs/what-to-do-once-the-user-is-logged-in/calling-an-external-idp-api) which has some more information and screenshots.
-    a. Go to http://auth0.com and sign up
-    b. Create a client, making sure you select client type "Regular Web Applications". You can give the client
+    1. Go to http://auth0.com and sign up
+    2. Create a client, making sure you select client type `Regular Web Applications`. You can give the client
        whatever name you prefer.
-    c. After the client is created, ignore the "Quick Start" section and go to the "Settings" tab.
-    d. Copy the Client ID and Client Secret, as well as the Domain, from the "Settings" tab and paste into your config.ts.
-    e. Under "Allowed Callback URLs" in the "Settings" tab, enter "https://YOUR_DOMAIN/mobile"
-    f. Under "Allowed Origins (CORS)" in the "Settings" tab, enter "http://localhost:8100" and "file://\*", then save changes
-    d. Next, go to the APIs section of the Auth0 dashboard and select the Auth0 Management API.
+    3. After the client is created, ignore the `Quick Start` section and go to the `Settings` tab.
+    4. Copy the `Client ID` and `Client Secret`, as well as the `Domain`, from the `Settings` tab and paste into your config.ts.
+    5. Under `Allowed Callback URLs` in the `Settings` tab, enter `https://YOUR_DOMAIN/mobile`
+    6. Under `Allowed Origins (CORS)` in the `Settings` tab, enter `http://localhost:8100` and `file://\*`, then save changes
+    7. Next, go to the APIs section of the Auth0 dashboard and select the Auth0 Management API.
         > NOTE: If you do not see the APIs option in the left menu, you must enable it. Go to Account Settings > Advanced and select Enable APIs Section.
-    e. Select the Non Interactive Clients tab and authorize the app you just created.
-    f. From the list of available scopes, select read:user_idp_tokens and click Update.
+    8. Select the Non Interactive Clients tab and authorize the app you just created.
+    9. From the list of available scopes, select `read:user_idp_tokens` and click Update.
 
 ## Common Development Workflows
 
