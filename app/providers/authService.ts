@@ -116,7 +116,6 @@ export class AuthService {
       this.local.set("refresh_token", authResult.refreshToken);
       this.zoneImpl.run(() => this.user = authResult.profile);
     });
-
   }
 
   public authenticated() {
@@ -130,11 +129,8 @@ export class AuthService {
   }
 
   public logout() {
-    this.local.remove("profile");
-    this.local.remove("id_token");
-    this.local.remove("refresh_token");
-    this.local.remove("auth0_access_token");
-    this.local.remove("github_access_token");
+    // delete all persisted data
+    this.local.clear();
 
     this.zoneImpl.run(() => this.user = null);
   }
