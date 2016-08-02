@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/Rx";
-import {WinkConfig} from "./winkConfig";
+import {Config} from "../../../config";
 import {WinkUser} from "./model/winkUser";
 import {WinkDeviceEnumerationResponse} from "./model/winkDeviceEnumerationResponse";
 import {WinkDevice} from "./model/winkDevice";
@@ -44,8 +44,8 @@ export class WinkService {
     public initiateSignIn(email: string, password: string): Promise<WinkUser> {
 
         let postData = JSON.stringify({
-            "client_id": WinkConfig.CLIENT_ID,
-            "client_secret": WinkConfig.CLIENT_SECRET,
+            "client_id": Config.Wink.CLIENT_ID,
+            "client_secret": Config.Wink.CLIENT_SECRET,
             "username": email,
             "password": password,
             "grant_type": "password"
@@ -57,7 +57,7 @@ export class WinkService {
 
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.post(WinkConfig.API_ENDPOINT + "/oauth2/token", postData, options)
+        return this.http.post(Config.Wink.API_ENDPOINT + "/oauth2/token", postData, options)
             .toPromise()
             .then((res) => {
                 return this.handleSignInResponse(res);
@@ -90,7 +90,7 @@ export class WinkService {
     // initiates enumerating devices for the user (filtered by devices that have the specified id key
     public initiateEnumerateDevices(idKeyFilter: string): Promise<WinkDevice[]> {
 
-        return this.http.get(WinkConfig.API_ENDPOINT + "/users/me/wink_devices", this.signedInHttpAuthOptions())
+        return this.http.get(Config.Wink.API_ENDPOINT + "/users/me/wink_devices", this.signedInHttpAuthOptions())
             .toPromise()
             .then((res) => {
                 return this.handleEnumerateDevicesResponse(res, idKeyFilter);

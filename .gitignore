@@ -13,4 +13,4 @@ Thumbs.db
 .tmp
 logs
 *.log
-winkConfig.ts
+config.ts

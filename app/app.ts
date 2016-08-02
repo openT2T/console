@@ -1,9 +1,7 @@
-import {Component, provide} from '@angular/core';
+import {Component, provide} from "@angular/core";
 import {ionicBootstrap, Platform} from "ionic-angular";
 import {Http, HTTP_PROVIDERS} from "@angular/http";
-import {AuthHttp, AuthConfig} from 'angular2-jwt';
-
-import {AuthService} from './providers/authService';
+import {AuthService} from "./providers/authService";
 import {GenericGitHubDataService} from "./providers/genericGitHubDataService";
 import {TranslatorsDataService} from "./providers/translatorsDataService";
 import {VoiceHandlersDataService} from "./providers/voiceHandlersDataService";
@@ -48,12 +46,6 @@ export class MyApp {
 // http://ionicframework.com/docs/v2/api/config/Config/
 ionicBootstrap(MyApp,
     [
-        provide(AuthHttp, {
-            useFactory: (http) => {
-            return new AuthHttp(new AuthConfig({ noJwtError: true }), http);
-            },
-            deps: [ Http ]
-        }),
         AuthService,
         OpenT2TBridgeService, 
         GenericGitHubDataService, 
@@ -63,12 +55,12 @@ ionicBootstrap(MyApp,
         OnboardingDataService
     ],
     {
-        backButtonText: 'Go Back',
-        iconMode: 'ios',
-        modalEnter: 'modal-slide-in',
-        modalLeave: 'modal-slide-out',
-        tabbarPlacement: 'bottom',
-        pageTransition: 'ios',
+        backButtonText: "Go Back",
+        iconMode: "ios",
+        modalEnter: "modal-slide-in",
+        modalLeave: "modal-slide-out",
+        tabbarPlacement: "bottom",
+        pageTransition: "ios",
         tabSubPages: false
     }
 );
