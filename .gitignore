@@ -13,4 +13,4 @@ Thumbs.db
 .tmp
 logs
 *.log
-config.ts
+*config.ts
