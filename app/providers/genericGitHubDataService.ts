@@ -4,7 +4,6 @@ import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "@angular/
 import "rxjs/Rx";
 import {GitHubFileItem} from "../model/gitHub/gitHubFileItem";
 import {GitHubFileContentItem} from "../model/gitHub/gitHubFileContentItem";
-import {AuthService} from "./authService";
 
 @Injectable()
 export class GenericGitHubDataService {
@@ -22,21 +21,13 @@ export class GenericGitHubDataService {
         var promise = this.local.get("github_access_token").then(github_access_token => {
 
             // configure headers to include the github credential if the user is signed in
-            let getHeaders = new Headers();
-            let getOptions = new RequestOptions({ headers: getHeaders });
-            if (!!github_access_token) {
-                getOptions.headers.append("Authorization", "Bearer " + github_access_token);
-            }
+            var getOptions = this.generateHttpOptionsWithBearerTokenHeader(github_access_token);
 
             return this.http.get(repositoryApiUrl, getOptions)
                 .toPromise()
                 .then((res) => {
                     return this.handleGetDirectoriesInPath(res);
-                }).catch((err) => {
-                    console.log(JSON.stringify(err));
-                    return Promise.reject<string[]>(err);
                 });
-
         }).catch(error => {
             console.log(JSON.stringify(error));
             return Promise.reject<string[]>(error);
@@ -73,21 +64,13 @@ export class GenericGitHubDataService {
         var promise = this.local.get("github_access_token").then(github_access_token => {
 
             // configure headers to include the github credential if the user is signed in
-            let getHeaders = new Headers();
-            let getOptions = new RequestOptions({ headers: getHeaders });
-            if (!!github_access_token) {
-                getOptions.headers.append("Authorization", "Bearer " + github_access_token);
-            }
+            var getOptions = this.generateHttpOptionsWithBearerTokenHeader(github_access_token);
 
             return this.http.get(repositoryApiUrl, getOptions)
                 .toPromise()
                 .then((res) => {
                     return this.handleGetDirectoriesAndFilesInPath(res);
-                }).catch((err) => {
-                    console.log(JSON.stringify(err));
-                    return Promise.reject<string[]>(err);
                 });
-
         }).catch(error => {
             console.log(JSON.stringify(error));
             return Promise.reject<string[]>(error);
@@ -123,21 +106,13 @@ export class GenericGitHubDataService {
         var promise = this.local.get("github_access_token").then(github_access_token => {
 
             // configure headers to include the github credential if the user is signed in
-            let getHeaders = new Headers();
-            let getOptions = new RequestOptions({ headers: getHeaders });
-            if (!!github_access_token) {
-                getOptions.headers.append("Authorization", "Bearer " + github_access_token);
-            }
+            var getOptions = this.generateHttpOptionsWithBearerTokenHeader(github_access_token);
 
             return this.http.get(repositoryApiUrl, getOptions)
                 .toPromise()
                 .then((res) => {
                     return this.handleGetFilesInPath(res);
-                }).catch((err) => {
-                    console.log(JSON.stringify(err));
-                    return Promise.reject<string[]>(err);
                 });
-
         }).catch(error => {
             console.log(JSON.stringify(error));
             return Promise.reject<string[]>(error);
@@ -173,21 +148,13 @@ export class GenericGitHubDataService {
         var promise = this.local.get("github_access_token").then(github_access_token => {
 
             // configure headers to include the github credential if the user is signed in
-            let getHeaders = new Headers();
-            let getOptions = new RequestOptions({ headers: getHeaders });
-            if (!!github_access_token) {
-                getOptions.headers.append("Authorization", "Bearer " + github_access_token);
-            }
+            var getOptions = this.generateHttpOptionsWithBearerTokenHeader(github_access_token);
 
             return this.http.get(repositoryApiUrl, getOptions)
                 .toPromise()
                 .then((res) => {
                     return this.handleGetFileContentInPath(res);
-                }).catch((err) => {
-                    console.log(JSON.stringify(err));
-                    return Promise.reject<string>(err);
                 });
-
         }).catch(error => {
             console.log(JSON.stringify(error));
             return Promise.reject<string>(error);
@@ -216,5 +183,16 @@ export class GenericGitHubDataService {
             console.log("Success: Got file content in path.");
             return Promise.resolve<string>(content);
         }
+    }
+
+    // Helper method to generate Http headers, optionally adding a bearer token if specified
+    private generateHttpOptionsWithBearerTokenHeader(bearerToken: string): RequestOptions {
+        let headers = new Headers();
+        let options = new RequestOptions({ headers: headers });
+        if (!!bearerToken) {
+            options.headers.append("Authorization", "Bearer " + bearerToken);
+        }
+
+        return options;
     }
 }
