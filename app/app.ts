@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, provide} from "@angular/core";
 import {ionicBootstrap, Platform} from "ionic-angular";
 import {Http, HTTP_PROVIDERS} from "@angular/http";
-
+import {AuthService} from "./providers/authService";
 import {GenericGitHubDataService} from "./providers/genericGitHubDataService";
 import {TranslatorsDataService} from "./providers/translatorsDataService";
 import {VoiceHandlersDataService} from "./providers/voiceHandlersDataService";
@@ -44,13 +44,23 @@ export class MyApp {
 // Pass any providers for your app in the second argument
 // Set any config for your app as the third argument:
 // http://ionicframework.com/docs/v2/api/config/Config/
-
-ionicBootstrap(MyApp, [OpenT2TBridgeService, GenericGitHubDataService, TranslatorsDataService, VoiceHandlersDataService, SearchDataService, OnboardingDataService], {
-    backButtonText: 'Go Back',
-    iconMode: 'ios',
-    modalEnter: 'modal-slide-in',
-    modalLeave: 'modal-slide-out',
-    tabbarPlacement: 'bottom',
-    pageTransition: 'ios',
-    tabSubPages: false
-});
+ionicBootstrap(MyApp,
+    [
+        AuthService,
+        OpenT2TBridgeService, 
+        GenericGitHubDataService, 
+        TranslatorsDataService,
+        VoiceHandlersDataService,
+        SearchDataService, 
+        OnboardingDataService
+    ],
+    {
+        backButtonText: "Go Back",
+        iconMode: "ios",
+        modalEnter: "modal-slide-in",
+        modalLeave: "modal-slide-out",
+        tabbarPlacement: "bottom",
+        pageTransition: "ios",
+        tabSubPages: false
+    }
+);

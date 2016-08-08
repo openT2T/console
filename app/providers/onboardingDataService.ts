@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {Http, HTTP_PROVIDERS, Response, Headers, RequestOptions} from "@angular/http";
 import "rxjs/Rx";
 import {GenericGitHubDataService} from "./genericGitHubDataService";
 
@@ -10,7 +9,7 @@ export class OnboardingDataService {
     private BASEURL = "https://api.github.com/repos/opent2t/onboarding/contents";
 
     // ctor
-    constructor(private http: Http, private genericGitHubDataService: GenericGitHubDataService) {
+    constructor(private genericGitHubDataService: GenericGitHubDataService) {
     }
 
     // initiates getting the list of onboarding methods from the repository.

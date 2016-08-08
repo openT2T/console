@@ -7,7 +7,7 @@ import {OpenT2TBridgeService} from "../../../providers/opent2tBridgeService";
 
 import {Device} from "../../../model/device";
 
-import {WinkConfig} from "./winkConfig";
+import {Config} from "../../../config";
 import {WinkUser} from "./model/winkUser";
 import {WinkService} from "./winkService";
 import {WinkDevice} from "./model/winkDevice";

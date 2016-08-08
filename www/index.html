@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <title>Open Translators to Things Console</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Auth0.js script -->
+  <script src="https://cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+
+  <!-- Auth0 Lock script -->
+  <script src="http://cdn.auth0.com/js/lock/10.0.0/lock.min.js"></script>
+
+  <!-- Setting the right viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -11,6 +21,7 @@
   <link md-href="build/css/app.md.css" rel="stylesheet">
   <link wp-href="build/css/app.wp.css" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- this Ionic's root component and where the app will load -->
@@ -26,4 +37,5 @@
   <!-- the bundle which is built from the app's source code -->
   <script src="build/js/app.bundle.js"></script>
 </body>
+
 </html>
